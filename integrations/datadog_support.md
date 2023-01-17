@@ -1,70 +1,70 @@
-# Datadog Support
+# 支持Datadog
 
-[Datadog](https://www.datadoghq.com/) is a modern monitoring & security platform.
+[Datadog](https://www.datadoghq.com/) 是一个现代监控&安全管理平台。
 
-We developed [Integrations](https://docs.datadoghq.com/integrations/) for StarRocks: 
+我们为StarRocks开发对应的[Integrations](https://docs.datadoghq.com/integrations/): 
 - [StarRocks BE Integrations](https://github.com/StarRocks/starrocks/tree/main/contrib/datadog-connector/starrocks_be)
 - [StarRocks FE Integrations](https://github.com/StarRocks/starrocks/tree/main/contrib/datadog-connector/starrocks_fe)
 
-## Environment
+## 环境准备
 
 - [Datadog Agent](https://docs.datadoghq.com/getting_started/agent/)
 - Python
-Notice: Use `Datadog Agent`'s python, eg: 
+注意: 使用`Datadog Agent`的python环境, 比如: 
 ```
 /opt/datadog-agent/embedded/bin/python | pip)
 ```
 
-## Installation
+## 安装
 
-Since `Integrations` does not contribute to `Datadog`, it needs to be installed from the source code.
+由于该`Integrations`还未贡献给`Datadog`, 需要使用源码进行安装。
 
-### Install StarRocks-FE
-Install from Source Code([StarRocks FE Integrations](https://github.com/StarRocks/starrocks/tree/main/contrib/datadog-connector/starrocks_fe))
+### 安装StarRocks-FE
+通过源码安装([StarRocks FE Integrations](https://github.com/StarRocks/starrocks/tree/main/contrib/datadog-connector/starrocks_fe))
 ```
 /opt/datadog-agent/embedded/bin/pip install .
 ```
-Uninstall
+卸载
 ```
 /opt/datadog-agent/embedded/bin/pip uninstall datadog-starrocks-fe
 ```
 
-### Install StarRocks-BE
-Install from Source Code([StarRocks BE Integrations](https://github.com/StarRocks/starrocks/tree/main/contrib/datadog-connector/starrocks_be))
+### 安装StarRocks-BE
+通过源码安装([StarRocks BE Integrations](https://github.com/StarRocks/starrocks/tree/main/contrib/datadog-connector/starrocks_be))
 ```
 /opt/datadog-agent/embedded/bin/pip install .
 ```
-Uninstall
+卸载
 ```
 /opt/datadog-agent/embedded/bin/pip uninstall datadog-starrocks-be
 ```
 
-## Usage
+## 使用
 
-### Configuration
+### 配置
 
-#### Configuration FE
-For FE, copy [conf.yaml.example](https://github.com/StarRocks/starrocks/blob/main/contrib/datadog-connector/starrocks_fe/datadog_checks/starrocks_fe/data/conf.yaml.example) to `/etc/datadog-agent/conf.d/starrocks_fe.d/conf.yaml`.
+#### 配置FE
+对于FE, 拷贝[conf.yaml.example](https://github.com/StarRocks/starrocks/blob/main/contrib/datadog-connector/starrocks_fe/datadog_checks/starrocks_fe/data/conf.yaml.example)到`/etc/datadog-agent/conf.d/starrocks_fe.d/conf.yaml`来进行配置。
 
-Explanation of some important config:
+一些重要参数的解释:
 
-| **Config** | **Example** | **Description** |
+| **配置** | **例子** | **描述** |
   | -------------------------------------- | ------------ | ------------------------------------------------------------ |
-   | fe_metric_url | http://localhost:8030/metrics | The URL where StarRocks FE metrics. |
-   | metrics | - starrocks_fe_* | Indicators to be monitored, supporting wildcards `*` |
+   | fe_metric_url | http://localhost:8030/metrics | 配置获取StarRocks FE配置的URL |
+   | metrics | - starrocks_fe_* | 配置需要监控的指标，支持通配符`*` |
 
-#### Configuration BE
-For BE, copy [conf.yaml.example](https://github.com/StarRocks/starrocks/blob/main/contrib/datadog-connector/starrocks_be/datadog_checks/starrocks_be/data/conf.yaml.example) to `/etc/datadog-agent/conf.d/starrocks_be.d/conf.yaml`.
+#### 配置BE
+对于BE, 拷贝[conf.yaml.example](https://github.com/StarRocks/starrocks/blob/main/contrib/datadog-connector/starrocks_be/datadog_checks/starrocks_be/data/conf.yaml.example)到`/etc/datadog-agent/conf.d/starrocks_be.d/conf.yaml`来进行配置。
 
-Explanation of some important config:
+一些重要参数的解释:
 
-| **Config** | **Example** | **Description** |
+| **配置** | **例子** | **描述** |
   | -------------------------------------- | ------------ | ------------------------------------------------------------ |
-   | be_metric_url | http://localhost:8040/metrics | The URL where StarRocks BE metrics. |
-   | metrics | - starrocks_be_* | Indicators to be monitored, supporting wildcards `*` |
+   | be_metric_url | http://localhost:8040/metrics | 配置获取StarRocks BE配置的URL |
+   | metrics | - starrocks_be_* | 配置需要监控的指标，支持通配符`*` |
 
-### Restart Datadog Agent
-Reference [Restart the Agent](https://docs.datadoghq.com/agent/guide/agent-commands/#start-stop-and-restart-the-agent)
+### 重启Datadog Agent
+参考 [Restart the Agent](https://docs.datadoghq.com/agent/guide/agent-commands/#start-stop-and-restart-the-agent)
 
-### Verification
-Look [Datadog Application](https://docs.datadoghq.com/getting_started/application/)
+### 验证
+查看 [Datadog Application](https://docs.datadoghq.com/getting_started/application/)
