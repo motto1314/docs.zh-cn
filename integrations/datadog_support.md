@@ -2,7 +2,7 @@
 
 [Datadog](https://www.datadoghq.com/) 是一个现代监控&安全管理平台。
 
-我们为 StarRocks 开发对应的[Integrations](https://docs.datadoghq.com/integrations/):
+我们为 StarRocks 开发对应的 [Integrations](https://docs.datadoghq.com/integrations/):
 
 - [StarRocks BE Integrations](https://github.com/StarRocks/starrocks/tree/main/contrib/datadog-connector/starrocks_be)
 - [StarRocks FE Integrations](https://github.com/StarRocks/starrocks/tree/main/contrib/datadog-connector/starrocks_fe)
@@ -54,9 +54,9 @@
 
 ### 配置
 
-#### 配置FE
+#### 配置 FE
 
-对于FE，拷贝 [conf.yaml.example](https://github.com/StarRocks/starrocks/blob/main/contrib/datadog-connector/starrocks_fe/datadog_checks/starrocks_fe/data/conf.yaml.example) 到 `/etc/datadog-agent/conf.d/starrocks_fe.d/conf.yaml` 来进行配置。
+对于 FE，拷贝 [conf.yaml.example](https://github.com/StarRocks/starrocks/blob/main/contrib/datadog-connector/starrocks_fe/datadog_checks/starrocks_fe/data/conf.yaml.example) 到 `/etc/datadog-agent/conf.d/starrocks_fe.d/conf.yaml` 来进行配置。
 
 一些重要参数的解释:
 
