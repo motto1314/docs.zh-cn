@@ -12,7 +12,7 @@
 - [Datadog Agent](https://docs.datadoghq.com/getting_started/agent/)
 - Python
 
-注意: 使用 `Datadog Agent`的 python 环境，比如: 
+注意: 使用 `Datadog Agent`的 python 环境，比如：
 
 ```
 /opt/datadog-agent/embedded/bin/python | pip)
@@ -26,13 +26,13 @@
 
 通过源码安装 [StarRocks FE Integrations](https://github.com/StarRocks/starrocks/tree/main/contrib/datadog-connector/starrocks_fe)
 
-```
+```shell
 /opt/datadog-agent/embedded/bin/pip install .
 ```
 
 卸载
 
-```
+```shell
 /opt/datadog-agent/embedded/bin/pip uninstall datadog-starrocks-fe
 ```
 
@@ -40,13 +40,13 @@
 
 通过源码安装 [StarRocks BE Integrations](https://github.com/StarRocks/starrocks/tree/main/contrib/datadog-connector/starrocks_be)
 
-```
+```shell
 /opt/datadog-agent/embedded/bin/pip install .
 ```
 
 卸载
 
-```
+```shell
 /opt/datadog-agent/embedded/bin/pip uninstall datadog-starrocks-be
 ```
 
@@ -62,8 +62,8 @@
 
 | **配置** | **例子** | **描述** |
   | -------------------------------------- | ------------ | ------------------------------------------------------------ |
-   | fe_metric_url | http://localhost:8030/metrics | 用于获取 StarRocks FE 配置的 URL。 |
-   | metrics | - starrocks_fe_* | 需要监控的指标，支持通配符`*`。 | 
+   | fe_metric_url | http://localhost:8030/metrics | 用于获取 StarRocks FE 配置的 URL。|
+   | metrics | - starrocks_fe_* | 需要监控的指标，支持通配符`*`。| 
 
 #### 配置 BE
 
