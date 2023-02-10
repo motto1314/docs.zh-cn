@@ -14,7 +14,7 @@
 
 注意: 使用 `Datadog Agent`的 python 环境，比如：
 
-```
+```shell
 /opt/datadog-agent/embedded/bin/python | pip)
 ```
 
@@ -61,9 +61,9 @@
 一些重要参数的解释:
 
 | **配置** | **例子** | **描述** |
-  | -------------------------------------- | ------------ | ------------------------------------------------------------ |
-   | fe_metric_url | http://localhost:8030/metrics | 用于获取 StarRocks FE 配置的 URL。|
-   | metrics | - starrocks_fe_* | 需要监控的指标，支持通配符`*`。| 
+| -------------------------------------- | ------------ | ---------------------------------------------- |
+| fe_metric_url | http://localhost:8030/metrics | 用于获取 StarRocks FE 配置的 URL。|
+| metrics | - starrocks_fe_* | 需要监控的指标，支持通配符`*`。| 
 
 #### 配置 BE
 
